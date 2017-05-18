@@ -1,0 +1,56 @@
+<footer class="primary-nav">
+    <div>
+        <nav class="grey lighten-2">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <p style="color: #616161;">&copy; {{thisYear}} - MHome</p>  
+                    <!--<ul class="center">
+                        <li (click)="homeClick()">
+                            <a class="grey-text text-darken-2 valign-wrapper" [routerLink]="['/']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive #rla1="routerLinkActive">
+                                <div class="valign">
+                                    <span class="{{ rla2.isActive ? 'icon icon_home' : 'icon icon_home_inactive'}}">
+                                        <span class="chip {{countColor}} mainbadge smaller" *ngIf="hasSilverBayActionItems()">{{silverBayActionItems}}</span>
+                                    </span>
+                                    <div class="primary-nav-label {{ rla2.isActive ? 'active' : ''}}">Home</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-darken-2 valign-wrapper" [routerLink]="[workOrderLinkPath]" routerLinkActive #rla2="routerLinkActive">
+                                <div class="valign">
+                                    <span class="{{ rla2.isActive ? 'icon icon_wos' : 'icon icon_wos_inactive'}}">
+                                        <span class="chip red mainbadge smaller" *ngIf="hasVendorActionItems()">{{vendorActionItems}}</span>
+                                    </span>
+                                    <div class="primary-nav-label {{ rla2.isActive ? 'active' : ''}}">Work Orders</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-darken-2 valign-wrapper" [routerLink]="['/help']" routerLinkActive #rla3="routerLinkActive">
+                                <div class="valign">
+                                    <span class="{{ rla3.isActive ? 'icon icon_help_active' : 'icon icon_help_inactive'}}"></span>
+                                    <div class="primary-nav-label {{ rla3.isActive ? 'active' : ''}}">Help</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-darken-2 valign-wrapper" [routerLink]="['/settings']" routerLinkActive #rla4="routerLinkActive">
+                                <div class="valign">
+                                    <span class="{{ rla4.isActive ? 'icon icon_settings' : 'icon icon_settings_inactive'}}"></span>
+                                    <div class="primary-nav-label {{ rla4.isActive ? 'active' : ''}}">Settings</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li *ngIf="isUserAdminShown()">
+                            <a [routerLink]="['/user']" routerLinkActive="active" class="grey-text text-darken-2 valign-wrapper">
+                                <div class="valign">
+                                    <b>Users</b>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>-->
+                </div>
+            </div>
+        </nav>
+    </div>
+</footer>

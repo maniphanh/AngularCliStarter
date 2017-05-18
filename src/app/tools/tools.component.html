@@ -1,0 +1,58 @@
+<div class="row" style="margin-top: 30px;">
+    <md-tab-group>
+        <md-tab label="Task Logs">
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Log Created Date</th>
+                        <th>Details</th>
+                        <th>Application</th>
+                        <th>Feature</th>
+                        <th>Type</th>
+                        <th>Class</th>
+                        <th>Function</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let log of taskLogs">
+                        <td>{{log.CreatedDate | date:'medium'}}</td>
+                        <td>{{log.LogDetails}}</td>
+                        <td>{{log.Application}}</td>
+                        <td>{{log.Feature}}</td>
+                        <td *ngIf="log.MHomeLogType.Id === 1" class="purple lighten-4">{{log.MHomeLogType.Name}}</td>
+                        <td *ngIf="log.MHomeLogType.Id === 2" class="red lighten-4">{{log.MHomeLogType.Name}}</td>
+                        <td *ngIf="log.MHomeLogType.Id === 3" class="blue lighten-4">{{log.MHomeLogType.Name}}</td>
+                        <td>{{log.ClassName}}</td>
+                        <td>{{log.FunctionName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-tab>
+        <md-tab label="Notification">
+            <form class="form-horizontal" [formGroup]="notificationFormGroup">
+                <div class="col s12 m5">
+                    <p>To send notification, please provide these info</p>
+                    <div class="input-field">
+                        <input id="email" [ngClass]="{invalid: notificationFormGroup.get('email').status === 'INVALID' && notificationFormGroup.get('email').pristine === false}"
+                            formControlName="email" type="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <textarea id="textArea" placeholder="Message" formControlName="message" [ngClass]="{invalid: notificationFormGroup.get('message').status === 'INVALID' && notificationFormGroup.get('message').pristine === false}"
+                            ngMaxlength="70"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+                            <button [disabled]="notificationFormGroup.status === 'INVALID'" class="btn" (click)="sendNotification()">Send</button>
+                        </div>
+                    </div>
+                    <div class="row" style="color: #e53935;" *ngIf="hasError">
+                        <div class="col s12">{{errorMessage}} </div>
+                    </div>
+                </div>
+            </form>
+        </md-tab>
+    </md-tab-group>
+
+    <button md-button></button>
+</div>

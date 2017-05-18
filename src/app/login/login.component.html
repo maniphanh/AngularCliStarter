@@ -1,0 +1,42 @@
+<div *ngIf="!isLoggedIn()" class="row" style="margin-top: 30px;">
+    <div class="col s12 m3"></div>
+    <div class="col s12 m5">
+        <div class="card-panel z-depth-5">
+            <form class="form-horizontal" [formGroup]="loginForm">
+                <h5>MHome Log in</h5>
+                <div *ngIf="!isLoggedIn()">
+                    <p>To get started, please login or create an account</p>
+                    <div class="input-field">
+                        <input id="email" type="email" [ngClass]="{invalid: loginForm.get('email').status === 'INVALID' && loginForm.get('email').pristine === false}"
+                            formControlName="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <input type="password" formControlName="password" [ngClass]="{invalid: loginForm.get('password').status === 'INVALID' && loginForm.get('password').pristine === false}"
+                            placeholder="Password" />
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+                            <button [disabled]="loginForm.status === 'INVALID'" (click)="login()" class="btn-large">Login</button>
+                        </div>
+                    </div>
+                    <div class="row" style="color: #e53935;" *ngIf="hasError">
+                        <div class="col s12">{{errorMessage}} </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col s12 m3"></div>
+</div>
+
+<div *ngIf="isLoggedIn()" class="row" style="margin-top: 30px;">
+    <div>
+        <h5>My Profile</h5>
+    </div>
+    <div>
+        <p>Welcome, {{username}}</p>
+        <p>
+            <a (click)="logout()" class="btn">Logout</a>
+        </p>
+    </div>
+</div>

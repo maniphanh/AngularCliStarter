@@ -1,0 +1,7 @@
+// {
+//    "/token": {
+//       "target": "http://mhomeapi.azurewebsites.net",
+//       "secure": false,
+//       "changeOrigin": true
+//    }
+// }

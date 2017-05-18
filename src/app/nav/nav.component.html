@@ -1,0 +1,57 @@
+<header class="top-nav">
+  <nav class="white nav-secondary-work-order-edit">
+    <a class="brand-logo" [routerLink]="['/']">
+      <img src="/images/logo.png"></a>
+    <div class="container">
+      <div class="nav-wrapper secondary">
+        <ul *ngIf="isloggedin" class="center">
+          <li>
+            <a class="grey-text text-darken-2 valign-wrapper" [routerLink]="['/']">
+              <div class="valign">
+                <span class="icon icon_home_inactive"></span>
+                <div class="primary-nav-label active">Home</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-darken-2 valign-wrapper" [routerLink]="['/about']">
+              <div class="valign">
+                <span class="icon icon_help_inactive"></span>
+                <div class="primary-nav-label ">About</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-darken-2 valign-wrapper" [routerLink]="['/contact']">
+              <div class="valign"> <span class="icon icon_contact_inactive"></span>
+                <div class="primary-nav-label ">Contact</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-darken-2 valign-wrapper" [routerLink]="['/tools']">
+              <div class="valign"> <span class="icon icon_editwo_inactive"></span>
+                <div class="primary-nav-label ">Tools</div>
+              </div>
+            </a>
+          </li>
+          <li class="tooltipped">
+            <a class="grey-text text-darken-2 valign-wrapper" [routerLink]="['/login']">
+              <div class="valign">  <span class="icon icon_wos_inactive"></span>
+                <div class="primary-nav-label">My Profile</div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div style="margin-right: -110px;margin-top: -95px;">
+      </div>
+    </div>
+  </nav>
+   <div class="progress" *ngIf="loading" style="margin: 0;">
+      <div class="indeterminate"></div>
+  </div>
+   <div class="progress" *ngIf="hasError" style="margin: 0;">
+      <div class="determinate" style="width: 100%; background-color: #e53935;"></div>
+  </div>
+</header>
